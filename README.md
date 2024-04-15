@@ -4,7 +4,7 @@ ByteZone Injector is a user-mode injector designed for educational purposes in c
 ByteZone Injector offers various injection techniques to experiment with, providing a hands-on learning experience for understanding application loading and execution mechanisms. 
 
 ### Current Features
-**Native Injection: **
+**Native Injection:**
 This version of ByteZone Injector currently supports native injection using LoadLibraryA, providing a solid foundation for understanding injection mechanisms.
 
 ### Clean and Well-Commented Code
