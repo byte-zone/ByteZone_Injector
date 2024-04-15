@@ -13,7 +13,10 @@ This file contains the core logic for injection methods and GUI interaction. It 
   ```csharp
   class DllImports
   {
-  
+      /* Memory allocation */
+  public const uint MEM_COMMIT = 0x00001000; // MEM_COMMIT is a Windows constant used with Windows API calls
+  public const uint MEM_RESERVE = 0x00002000; // MEM_RESERVE is a Windows constant used with Windows API calls
+  public const uint PAGE_READWRITE = 4; // PAGE_READWRITE is a Windows constant used with Windows API calls
   }
   ```
 
@@ -21,8 +24,13 @@ This file contains the core logic for injection methods and GUI interaction. It 
   ```csharp
   class InjectionMethods
   {
-   [DllImport("kernel32.dll", SetLastError = true)]
- public static extern IntPtr CreateFile(string lpFileName, uint dwDesiredAccess, uint dwShareMode, IntPtr lpSecurityAttributes, uint dwCreationDisposition, uint dwFlagsAndAttributes, IntPtr hTemplateFile);
+
+        IntPtr hProcess = DllImports.OpenProcess(DllImports.PROCESS_CREATE_THREAD | DllImports.PROCESS_QUERY_INFORMATION | DllImports.PROCESS_VM_OPERATION | DllImports.PROCESS_VM_WRITE | DllImports.PROCESS_VM_READ, false, processes[0].Id);
+        if (hProcess == IntPtr.Zero)
+        {
+            MessageBox.Show("Failed to open process.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return;
+        }
   }
   ```
 
