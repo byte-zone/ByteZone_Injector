@@ -27,7 +27,7 @@ The codebase is well-structured and includes clear comments, making it easy to l
 3. Build and run the project
 ### Roadmap (Features in Development):
 **Development is ongoing to integrate additional injection techniques, including:**
-- [ ] Kernel injection using IOCTL with a custom driver (driver under development)
+- [x] Kernel injection using IOCTL with a custom driver (driver under development)
 - [ ] Manual mapping (planned for future release)
 - [ ] Thread hijacking (planned for future release)
 
