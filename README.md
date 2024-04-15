@@ -9,31 +9,9 @@ ByteZone Injector consists of two main files:
 
 #### `classes.cs`
 This file contains the core logic for injection methods and GUI interaction. It defines two main classes:
-
 - **DllImports:** This class encapsulates all Windows API imports and flags used throughout the injector, providing a central location for these definitions.
-  ```csharp
-  class DllImports
-  {
-      /* Memory allocation */
-  public const uint MEM_COMMIT = 0x00001000; // MEM_COMMIT is a Windows constant used with Windows API calls
-  public const uint MEM_RESERVE = 0x00002000; // MEM_RESERVE is a Windows constant used with Windows API calls
-  public const uint PAGE_READWRITE = 4; // PAGE_READWRITE is a Windows constant used with Windows API calls
-  }
-  ```
-
 - **InjectionMethods:** This class houses the actual injection techniques. Currently, it supports Native Injection, but future development plans include additional methods.
-  ```csharp
-  class InjectionMethods
-  {
 
-        IntPtr hProcess = DllImports.OpenProcess(DllImports.PROCESS_CREATE_THREAD | DllImports.PROCESS_QUERY_INFORMATION | DllImports.PROCESS_VM_OPERATION | DllImports.PROCESS_VM_WRITE | DllImports.PROCESS_VM_READ, false, processes[0].Id);
-        if (hProcess == IntPtr.Zero)
-        {
-            MessageBox.Show("Failed to open process.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            return;
-        }
-  }
-  ```
 #### `Main.cs`
 contains the main entry point and user interface logic for the ByteZone Injector application. It provides functionality to select a process and a DLL file for injection, as well as options for choosing the injection method. Key features include:
 1. Retrieval of running processes and display in a list.
@@ -48,14 +26,30 @@ contains the main entry point and user interface logic for the ByteZone Injector
 
 **Native Injection:**
 This version of ByteZone Injector currently supports native injection using LoadLibraryA, providing a solid foundation for understanding injection mechanisms.
-```csharp
-// Sample code for native injection
-I_Method.NtNativeInjection(S_ProcessName, dllPath);
-```
+
 
 ### Clean and Well-Commented Code
-
 The codebase is well-structured and includes clear comments, making it easy to learn from and understand as you experiment with the current Native Injection feature.
+- Sample
+```csharp
+ /*
+  * Process Security and Access Rights
+  * https://learn.microsoft.com/en-us/windows/win32/procthread/process-security-and-access-rights
+  */
+ /* Privileges */
+ public const int PROCESS_CREATE_THREAD = 0X0002; // Required to create a thread in the process.
+ /*
+  * PROCESS_QUERY_INFORMATION Required to retrieve certain information about a process (see GetExitCodeProcess, GetPriorityClass, IsProcessInJob, QueryFullProcessImageName).
+  * A handle that has the
+  * PROCESS_QUERY_INFORMATION access right is automatically granted
+  * PROCESS_QUERY_LIMITED_INFORMATION.Windows Server 2003 and Windows XP: This access right is not supported.
+  */
+ public const int PROCESS_QUERY_INFORMATION = 0x0400;
+ public const int PROCESS_VM_WRITE = 0x0020; // Required to write to memory in a process using WriteProcessMemory.
+ public const int PROCESS_VM_READ = 0x0010; // Required to read memory in a process using ReadProcessMemory.
+ public const int PROCESS_CM_OPERATION = 0x0008; // 
+ public const int PROCESS_VM_OPERATION = 0x0008; // Required to perform an operation on the address space of a process 
+```
 
 ### Installation
 
