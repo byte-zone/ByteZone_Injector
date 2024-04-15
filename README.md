@@ -71,7 +71,7 @@ The codebase is well-structured and includes clear comments, making it easy to l
 Development is ongoing to integrate additional injection techniques and improve user experience, including
 - [ ] Better Gui
 - [ ] Settings tab
-- [ ] Kernel injection using IOCTL with a custom driver (driver under development)
+- [ ] Kernel injection using IOCTL with a custom driver (driver under development or download the driver base)
 - [ ] LdrpLoadDll (planned for future release)
 - [ ] Manual mapping (planned for future release)
 - [ ] Thread hijacking (planned for future release)
