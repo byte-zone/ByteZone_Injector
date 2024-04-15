@@ -38,8 +38,6 @@ The codebase is well-structured and includes clear comments, making it easy to l
      * PROCESS_QUERY_INFORMATION access right is automatically granted
      */
     public const int PROCESS_QUERY_INFORMATION = 0x0400;
-
-
     public const int PROCESS_VM_WRITE = 0x0020; // Required to write to memory in a process using WriteProcessMemory.
     public const int PROCESS_VM_READ = 0x0010; // Required to read memory in a process using ReadProcessMemory.
     public const int PROCESS_VM_OPERATION = 0x0008; // Required to perform an operation on the address space of a process 
