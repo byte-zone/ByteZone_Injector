@@ -36,7 +36,6 @@ The codebase is well-structured and includes clear comments, making it easy to l
      * PROCESS_QUERY_INFORMATION Required to retrieve certain information about a process.
      * A handle that has the
      * PROCESS_QUERY_INFORMATION access right is automatically granted
-     * PROCESS_QUERY_LIMITED_INFORMATION.Windows Server 2003 and Windows XP: This access right is not supported.
      */
     public const int PROCESS_QUERY_INFORMATION = 0x0400;
 
