@@ -76,7 +76,7 @@ The ByteZone Injector driver is a foundational component designed to support fut
 4. Open the TwDrv Project, x64 Release.
 
 **Dll Example**
-Dll Example is just a simple example for printing and testing using ```cppMessaheBoxA``` Function
+Dll Example is just a simple example for printing and testing using ```MessaheBoxA``` Function
 ### Roadmap (Features in Development)
 Development is ongoing to integrate additional injection techniques and improve user experience, including
 - [ ] Better Gui
