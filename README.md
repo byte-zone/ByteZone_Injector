@@ -11,11 +11,10 @@ This version of ByteZone Injector currently supports native injection using Load
 The codebase is well-structured and includes clear comments, making it easy to learn from and understand as you experiment with the current Native Injection feature.
 
 ### Roadmap
-**Multiple Injection Methods:**
-- Development is ongoing to integrate additional injection techniques, including:
-Kernel injection using IOCTL with a custom driver (driver under development)
-Manual mapping (planned for future release)
-Thread hijacking (planned for future release)
+**Development is ongoing to integrate additional injection techniques, including:**
+1. Kernel injection using IOCTL with a custom driver (driver under development)
+2. Manual mapping (planned for future release)
+3. Thread hijacking (planned for future release)
 
 ### NOTE
 Kernel injection, manual mapping, and thread hijacking features are not yet available in this version.
