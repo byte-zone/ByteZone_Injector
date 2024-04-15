@@ -1,0 +1,89 @@
+;
+; TwDrv.inf
+;
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=Sample ; TODO: edit Class
+ClassGuid={78A1C341-4539-11d3-B88D-00C04FAD5171} ; TODO: edit ClassGuid
+Provider=%ManufacturerName%
+CatalogFile=TwDrv.cat
+DriverVer = 04/15/2024,6.41.44.738
+
+[DestinationDirs]
+DefaultDestDir = 12
+TwDrv_Device_CoInstaller_CopyFiles = 11
+
+; ================= Class section =====================
+
+[ClassInstall32]
+Addreg=SampleClassReg
+
+[SampleClassReg]
+HKR,,,0,%ClassName%
+HKR,,Icon,,-5
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+TwDrv.sys  = 1,,
+;
+
+
+;*****************************************
+; Install Section
+;*****************************************
+
+[Manufacturer]
+%ManufacturerName%=Standard,NTamd64
+
+[Standard.NTamd64]
+%TwDrv.DeviceDesc%=TwDrv_Device, Root\TwDrv ; TODO: edit hw-id
+
+[TwDrv_Device.NT]
+CopyFiles=Drivers_Dir
+
+[Drivers_Dir]
+TwDrv.sys
+
+;-------------- Service installation
+[TwDrv_Device.NT.Services]
+AddService = TwDrv,%SPSVCINST_ASSOCSERVICE%, TwDrv_Service_Inst
+
+; -------------- TwDrv driver install sections
+[TwDrv_Service_Inst]
+DisplayName    = %TwDrv.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\TwDrv.sys
+
+;
+;--- TwDrv_Device Coinstaller installation ------
+;
+
+[TwDrv_Device.NT.CoInstallers]
+AddReg=TwDrv_Device_CoInstaller_AddReg
+CopyFiles=TwDrv_Device_CoInstaller_CopyFiles
+
+[TwDrv_Device_CoInstaller_AddReg]
+;
+
+
+[TwDrv_Device_CoInstaller_CopyFiles]
+;
+
+
+[TwDrv_Device.NT.Wdf]
+KmdfService =  TwDrv, TwDrv_wdfsect
+[TwDrv_wdfsect]
+KmdfLibraryVersion = 1.15
+
+[Strings]
+SPSVCINST_ASSOCSERVICE= 0x00000002
+ManufacturerName="<Your manufacturer name>" ;TODO: Replace with your manufacturer name
+ClassName="Samples" ; TODO: edit ClassName
+DiskName = "TwDrv Installation Disk"
+TwDrv.DeviceDesc = "TwDrv Device"
+TwDrv.SVCDESC = "TwDrv Service"

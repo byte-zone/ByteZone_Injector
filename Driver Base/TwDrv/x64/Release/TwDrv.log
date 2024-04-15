@@ -1,0 +1,23 @@
+﻿  Building 'TwDrv' with toolset 'WindowsKernelModeDriver10.0' and the 'Universal' target platform.
+  Stamping x64\Release\TwDrv.inf
+  Stamping [Version] section with DriverVer=04/15/2024,6.41.44.738
+  Entry.cpp
+  TwDrv.vcxproj -> C:\Users\BzMus\source\repos\TwDrv\x64\Release\TwDrv.sys
+  Done Adding Additional Store
+  Successfully signed: C:\Users\BzMus\source\repos\TwDrv\x64\Release\TwDrv.sys
+  
+  Driver is a Universal Driver.
+  .........................
+  Signability test complete.
+  
+  Errors:
+  None
+  
+  Warnings:
+  None
+  
+  Catalog generation complete.
+  C:\Users\BzMus\source\repos\TwDrv\x64\Release\TwDrv\twdrv.cat
+  Done Adding Additional Store
+  Successfully signed: C:\Users\BzMus\source\repos\TwDrv\x64\Release\TwDrv\twdrv.cat
+  
