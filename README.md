@@ -5,8 +5,10 @@ ByteZone Injector is a user-mode injector written in C# .NET 8.0, designed for e
 **ByteZone Injector consists of two main files:**
 **classes.cs:**
 This file contains the core logic for injection methods and GUI interaction. It defines two main classes:
-DllImports This class encapsulates all Windows API imports and flags used throughout the injector, providing a central location for these definitions.
-InjectionMethods This class houses the actual injection techniques. Currently, it supports Native Injection, but future development plans include additional methods.
+- **DllImports**
+This class encapsulates all Windows API imports and flags used throughout the injector, providing a central location for these definitions.
+- **InjectionMethods**
+This class houses the actual injection techniques. Currently, it supports Native Injection, but future development plans include additional methods.
 
 
 
@@ -27,7 +29,9 @@ The codebase is well-structured and includes clear comments, making it easy to l
 3. Build and run the project
 ### Roadmap (Features in Development):
 **Development is ongoing to integrate additional injection techniques, including:**
-- [x] Kernel injection using IOCTL with a custom driver (driver under development)
+- [ ] Settings tab
+- [ ] Kernel injection using IOCTL with a custom driver (driver under development)
+- [ ] LdrpLoadDll (planned for future release)
 - [ ] Manual mapping (planned for future release)
 - [ ] Thread hijacking (planned for future release)
 
