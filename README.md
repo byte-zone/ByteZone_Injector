@@ -10,7 +10,21 @@ ByteZone Injector consists of two main files:
 This file contains the core logic for injection methods and GUI interaction. It defines two main classes:
 
 - **DllImports:** This class encapsulates all Windows API imports and flags used throughout the injector, providing a central location for these definitions.
+  ```csharp
+  class DllImports
+  {
+  
+  }
+  ```
+
 - **InjectionMethods:** This class houses the actual injection techniques. Currently, it supports Native Injection, but future development plans include additional methods.
+  ```csharp
+  class InjectionMethods
+  {
+   [DllImport("kernel32.dll", SetLastError = true)]
+ public static extern IntPtr CreateFile(string lpFileName, uint dwDesiredAccess, uint dwShareMode, IntPtr lpSecurityAttributes, uint dwCreationDisposition, uint dwFlagsAndAttributes, IntPtr hTemplateFile);
+  }
+  ```
 
 ### Multiple Injection Methods
 
@@ -20,6 +34,10 @@ ByteZone Injector offers various injection techniques to experiment with, provid
 
 **Native Injection:**
 This version of ByteZone Injector currently supports native injection using LoadLibraryA, providing a solid foundation for understanding injection mechanisms.
+```csharp
+// Sample code for native injection
+I_Method.NtNativeInjection(S_ProcessName, dllPath);
+```
 
 ### Clean and Well-Commented Code
 
@@ -27,7 +45,7 @@ The codebase is well-structured and includes clear comments, making it easy to l
 
 ### Installation
 
-1. Download and install the .NET 8.0 SDK from [here](https://dotnet.microsoft.com/en-us/download/dotnet/8.0).
+1. Download and install the .NET 8.0 SDK from [here](link).
 2. Download ByteZone injector from [here](link).
 3. Build and run the project.
 
