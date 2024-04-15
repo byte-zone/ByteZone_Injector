@@ -35,7 +35,7 @@ This file contains the core logic for injection methods and GUI interaction. It 
   ```
 #### `Main.cs`
 contains the main entry point and user interface logic for the ByteZone Injector application. It provides functionality to select a process and a DLL file for injection, as well as options for choosing the injection method. Key features include:
-!. Retrieval of running processes and display in a list.
+1. Retrieval of running processes and display in a list.
 2. Selection of a DLL file through a file dialog.
 3. Native injection of the selected DLL into the chosen process.
 4. Handling of user interactions such as button clicks and dropdown selections.
