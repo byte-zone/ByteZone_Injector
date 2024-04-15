@@ -32,23 +32,36 @@ This version of ByteZone Injector currently supports native injection using Load
 The codebase is well-structured and includes clear comments, making it easy to learn from and understand as you experiment with the current Native Injection feature.
 - Sample
 ```csharp
- /*
-  * Process Security and Access Rights
-  * https://learn.microsoft.com/en-us/windows/win32/procthread/process-security-and-access-rights
-  */
- /* Privileges */
- public const int PROCESS_CREATE_THREAD = 0X0002; // Required to create a thread in the process.
- /*
-  * PROCESS_QUERY_INFORMATION Required to retrieve certain information about a process (see GetExitCodeProcess, GetPriorityClass, IsProcessInJob, QueryFullProcessImageName).
-  * A handle that has the
-  * PROCESS_QUERY_INFORMATION access right is automatically granted
-  * PROCESS_QUERY_LIMITED_INFORMATION.Windows Server 2003 and Windows XP: This access right is not supported.
-  */
- public const int PROCESS_QUERY_INFORMATION = 0x0400;
- public const int PROCESS_VM_WRITE = 0x0020; // Required to write to memory in a process using WriteProcessMemory.
- public const int PROCESS_VM_READ = 0x0010; // Required to read memory in a process using ReadProcessMemory.
- public const int PROCESS_CM_OPERATION = 0x0008; // 
- public const int PROCESS_VM_OPERATION = 0x0008; // Required to perform an operation on the address space of a process 
+    /*
+     * PROCESS_QUERY_INFORMATION Required to retrieve certain information about a process (see GetExitCodeProcess, GetPriorityClass, IsProcessInJob, QueryFullProcessImageName).
+     * A handle that has the
+     * PROCESS_QUERY_INFORMATION access right is automatically granted
+     * PROCESS_QUERY_LIMITED_INFORMATION.Windows Server 2003 and Windows XP: This access right is not supported.
+     */
+    public const int PROCESS_QUERY_INFORMATION = 0x0400;
+
+
+    public const int PROCESS_VM_WRITE = 0x0020; // Required to write to memory in a process using WriteProcessMemory.
+    public const int PROCESS_VM_READ = 0x0010; // Required to read memory in a process using ReadProcessMemory.
+    public const int PROCESS_VM_OPERATION = 0x0008; // Required to perform an operation on the address space of a process 
+
+    /* Memory allocation */
+    public const uint MEM_COMMIT = 0x00001000; // MEM_COMMIT is a Windows constant used with Windows API calls
+    public const uint MEM_RESERVE = 0x00002000; // MEM_RESERVE is a Windows constant used with Windows API calls
+    public const uint PAGE_READWRITE = 4; // PAGE_READWRITE is a Windows constant used with Windows API calls
+
+    /* Generic Access Rights Win32 */
+    // https://learn.microsoft.com/en-us/windows/win32/secauthz/generic-access-rights
+    public const uint GENERIC_READ = 0x80000000; // Read access
+    public const uint GENERIC_WRITE = 0x40000000; // Write access
+    
+    /* 
+     * Opens a file or device, only if it exists.
+     * If the specified file or device does not exist, the
+     * function fails and the last-error code is set to ERROR_FILE_NOT_FOUND (2).
+     * https://learn.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-createfilea
+     */
+    public const int OPEN_EXISTING = 3; 
 ```
 
 ### Installation
