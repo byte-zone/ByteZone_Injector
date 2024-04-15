@@ -1,11 +1,18 @@
 ## What is ByteZone Injector?
 ByteZone Injector is a user-mode injector written in C# .NET 8.0, designed for educational purposes in computer science. It allows you to delve into injection techniques and gain a deeper understanding of how applications interact with the system.
-### Multiple Injection Methods
-ByteZone Injector offers various injection techniques to experiment with, providing a hands-on learning experience for understanding application loading and execution mechanisms. 
 
 ### Project Structure:
 **ByteZone Injector consists of two main files:**
-classes.cs:
+**classes.cs:**
+- This file contains the core logic for injection methods and GUI interaction. It defines two main classes:
+ - **DllImports** This class encapsulates all Windows API imports and flags used throughout the injector, providing a central location for these definitions.
+  - **InjectionMethods** This class houses the actual injection techniques. Currently, it supports Native Injection, but future development plans include additional methods.
+
+
+
+### Multiple Injection Methods
+ByteZone Injector offers various injection techniques to experiment with, providing a hands-on learning experience for understanding application loading and execution mechanisms. 
+
 
 ### Current Features
 **Native Injection:**
