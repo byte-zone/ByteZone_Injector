@@ -33,7 +33,14 @@ This file contains the core logic for injection methods and GUI interaction. It 
         }
   }
   ```
-
+#### `Main.cs`
+contains the main entry point and user interface logic for the ByteZone Injector application. It provides functionality to select a process and a DLL file for injection, as well as options for choosing the injection method. Key features include:
+!. Retrieval of running processes and display in a list.
+2. Selection of a DLL file through a file dialog.
+3. Native injection of the selected DLL into the chosen process.
+4. Handling of user interactions such as button clicks and dropdown selections.
+5. Display of process names and their corresponding IDs in a list.
+6. Management of the user interface components such as buttons, dropdowns, and labels.
 ### Multiple Injection Methods
 
 ByteZone Injector offers various injection techniques to experiment with, providing a hands-on learning experience for understanding application loading and execution mechanisms.
@@ -60,7 +67,7 @@ The codebase is well-structured and includes clear comments, making it easy to l
 ### Roadmap (Features in Development)
 
 Development is ongoing to integrate additional injection techniques, including:
-
+- [ ] Better Gui
 - [ ] Settings tab
 - [ ] Kernel injection using IOCTL with a custom driver (driver under development)
 - [ ] LdrpLoadDll (planned for future release)
