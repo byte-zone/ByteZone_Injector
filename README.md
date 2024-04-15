@@ -74,7 +74,30 @@ The ByteZone Injector driver is a foundational component designed to support fut
 2. Download and install WDK 1903 from [here](https://go.microsoft.com/fwlink/?linkid=2085767)
 3. Download and install Windows SDK (1903) [here](https://go.microsoft.com/fwlink/?linkid=2083338)
 4. Open TwDrv Project, Build Settings set to x64 Release.
-5. 
+- TwDrv Sample
+```cpp
+#define IOCTL_INJECT_CODE CTL_CODE(FILE_DEVICE_UNKNOWN, 0x800, METHOD_BUFFERED, FILE_SPECIAL_ACCESS)
+NTSTATUS IoControlHandler(PDEVICE_OBJECT DeviceObject, PIRP Irp)
+{
+	UNREFERENCED_PARAMETER(DeviceObject);
+	NTSTATUS status = STATUS_SUCCESS;
+	PIO_STACK_LOCATION stack = IoGetCurrentIrpStackLocation(Irp);
+	ULONG controlCode = stack->Parameters.DeviceIoControl.IoControlCode;
+
+	switch (controlCode)
+	{
+	case IOCTL_INJECT_CODE:
+			break;
+		default:
+			status = STATUS_INVALID_DEVICE_REQUEST;
+			break;
+	}
+
+	Irp->IoStatus.Status = status;
+	IoCompleteRequest(Irp, IO_NO_INCREMENT);
+	return status;
+}
+```
 **Dll Example**
 - Dll Example is just a simple example for printing and testing using ```MessageeBoxA``` Function
 ### Roadmap (Features in Development)
