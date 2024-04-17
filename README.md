@@ -2,6 +2,41 @@
 
 ByteZone Injector is a user-mode injector written in C# .NET 8.0, designed for educational purposes in computer science. It allows you to delve into injection techniques and gain a deeper understanding of how applications interact with the system, Also the injector offers **various injection techniques** to experiment with, providing a hands-on learning experience for understanding application loading and execution mechanisms.
 
+> [!TIP]
+> Driver update v1.0.1 
+<details>
+	<summary>Changelog</summary>
+
+Greetings
+We are excited to introduce the latest update to our driver, featuring a creative enhancement that adds a touch of magic to the injection process.
+
+##### Patch Highlights:
+
+ - Process Name Injection: Say farewell to anonymity! Now, in addition to injecting payloads, our driver can capture and remember the names of the brave processes that have joined the injection dance.
+
+ - Increased Intrigue: Witness the mesmerizing display of injected process names as they twirl and whirl through the driver's memory.
+
+ - Injection Statistics: Receive insightful statistics on the total injection attempts, successful injections, and marvel at the dazzling array of injected process names.
+
+ - Magic Moments: Delve into the world of kernel mode injection like never before, where processes gain names and binaries come to life with each injection.
+
+-  Improved User Experience: Feel the thrill of customization as you control the injection process and leave a lasting mark on the driver's memory.
+
+### Technical Improvements:
+
+1. Enhanced IOCTL handling to extract and store process names during injection.
+2. Added functionality to track and display injected process names within the driver.
+3. Updated driver logic to seamlessly integrate process name injection for a magical experience.
+
+### Bug Fixes:
+
+- Resolved minor glitches and optimized performance for a smoother injection process.
+Thank you for being part of our journey towards a more immersive and enchanting injection experience. What wonders will you uncover with our enhanced driver? Let the magic unfold!
+Stay tuned for more updates and keep injecting with flair!
+
+Yours magically,
+Byte Zone Team 
+</details>
 
 ### Project Structure
 
@@ -98,40 +133,6 @@ NTSTATUS IoControlHandler(PDEVICE_OBJECT DeviceObject, PIRP Irp)
 	return status;
 }
 ```
-<details>
-	<summary>Changelog</summary>
-	### Patch Notes for Driver Update v1.0.1 - "Process Name Injection Enhancement"
-Greetings
-
-We are excited to introduce the latest update to our driver, featuring a creative enhancement that adds a touch of magic to the injection process.
-
-##### Patch Highlights:
-
- - Process Name Injection: Say farewell to anonymity! Now, in addition to injecting payloads, our driver can capture and remember the names of the brave processes that have joined the injection dance.
-
- - Increased Intrigue: Witness the mesmerizing display of injected process names as they twirl and whirl through the driver's memory.
-
- - Injection Statistics: Receive insightful statistics on the total injection attempts, successful injections, and marvel at the dazzling array of injected process names.
-
- - Magic Moments: Delve into the world of kernel mode injection like never before, where processes gain names and binaries come to life with each injection.
-
--  Improved User Experience: Feel the thrill of customization as you control the injection process and leave a lasting mark on the driver's memory.
-
-### Technical Improvements:
-
-1. Enhanced IOCTL handling to extract and store process names during injection.
-2. Added functionality to track and display injected process names within the driver.
-3. Updated driver logic to seamlessly integrate process name injection for a magical experience.
-
-### Bug Fixes:
-
-- Resolved minor glitches and optimized performance for a smoother injection process.
-Thank you for being part of our journey towards a more immersive and enchanting injection experience. What wonders will you uncover with our enhanced driver? Let the magic unfold!
-Stay tuned for more updates and keep injecting with flair!
-
-Yours magically,
-Byte Zone Team 
-</details>
 
 **Dll Example**
 - Dll Example is just a simple example for printing and testing using ```MessageBoxA``` Function
