@@ -1,7 +1,7 @@
 ## What is ByteZone Injector?
 
 ByteZone Injector is a user-mode injector written in C# .NET 8.0, designed for educational purposes in computer science. It allows you to delve into injection techniques and gain a deeper understanding of how applications interact with the system, Also the injector offers **various injection techniques** to experiment with, providing a hands-on learning experience for understanding application loading and execution mechanisms.
-- [Wiki Arabic](https://github.com/byte-zone/ByteZone_Injector/wiki/Home-%7C-AR#%D9%85%D9%82%D8%AF%D9%85%D8%A9)
+- [أقرأ بالعربية](https://github.com/byte-zone/ByteZone_Injector/wiki/Home-%7C-AR#%D9%85%D9%82%D8%AF%D9%85%D8%A9)
 > [!TIP]
 > ### Driver update v1.0.1 / Injector update 1.2
 <details>
