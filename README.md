@@ -127,8 +127,8 @@ NTSTATUS IoControlHandler(PDEVICE_OBJECT DeviceObject, PIRP Irp)
 - Dll Example is just a simple example for printing and testing using ```MessageBoxA``` Function
 ### Roadmap (Features in Development)
 Development is ongoing to integrate additional injection techniques and improve user experience, including
-- [x] LdrpLoadDll (planned for future release)
-- [x] Manual mapping (planned for future release)
+- [x] LdrpLoadDll (UNSTABLE Version)
+- [x] Manual mapping (UNSTABLE Version)
 - [x] Settings tab
 - [ ] Better Gui
 - [ ] Kernel injection using IOCTL with a custom driver (driver under development, you can download the driver base)
