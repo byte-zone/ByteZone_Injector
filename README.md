@@ -3,39 +3,28 @@
 ByteZone Injector is a user-mode injector written in C# .NET 8.0, designed for educational purposes in computer science. It allows you to delve into injection techniques and gain a deeper understanding of how applications interact with the system, Also the injector offers **various injection techniques** to experiment with, providing a hands-on learning experience for understanding application loading and execution mechanisms.
 
 > [!TIP]
-> Driver update v1.0.1 
+> ### Driver update v1.0.1 / Injector update 1.2
 <details>
 	<summary>Changelog</summary>
 
-Greetings
-We are excited to introduce the latest update to our driver, featuring a creative enhancement that adds a touch of magic to the injection process.
+### Greetings!
+We're excited to announce the latest updates to our driver and injector.
 
-##### Patch Highlights:
+### Bytzone Injector 1.2
+1. Introducing the experimental LdrpLoadDll (ntdll.dll) method (UNSTABLE).
+2. Added manual mapping base for injection.
+3. Revamped injector UI for enhanced user experience.
+4. Improved organization of classes for better clarity.
 
- - Process Name Injection: Say farewell to anonymity! Now, in addition to injecting payloads, our driver can capture and remember the names of the brave processes that have joined the injection dance.
-
- - Increased Intrigue: Witness the mesmerizing display of injected process names as they twirl and whirl through the driver's memory.
-
- - Injection Statistics: Receive insightful statistics on the total injection attempts, successful injections, and marvel at the dazzling array of injected process names.
-
- - Magic Moments: Delve into the world of kernel mode injection like never before, where processes gain names and binaries come to life with each injection.
-
--  Improved User Experience: Feel the thrill of customization as you control the injection process and leave a lasting mark on the driver's memory.
-
-### Technical Improvements:
-
-1. Enhanced IOCTL handling to extract and store process names during injection.
-2. Added functionality to track and display injected process names within the driver.
-3. Updated driver logic to seamlessly integrate process name injection for a magical experience.
+### Driver Technical Improvements:
+1. Enhanced IOCTL handling to efficiently extract and store process names during injection.
+2. Now tracks and displays injected process names within the driver.
+3. Updated driver logic for a seamless integration, ensuring a magical experience.
 
 ### Bug Fixes:
-
-- Resolved minor glitches and optimized performance for a smoother injection process.
-Thank you for being part of our journey towards a more immersive and enchanting injection experience. What wonders will you uncover with our enhanced driver? Let the magic unfold!
-Stay tuned for more updates and keep injecting with flair!
-
-Yours magically,
-Byte Zone Team 
+- Fixed injector loading issue on startup.
+- Boosted Injector performance.
+- Resolved minor glitches in the driver and optimized performance for a smoother injection process.
 </details>
 
 ### Project Structure
@@ -138,12 +127,11 @@ NTSTATUS IoControlHandler(PDEVICE_OBJECT DeviceObject, PIRP Irp)
 - Dll Example is just a simple example for printing and testing using ```MessageBoxA``` Function
 ### Roadmap (Features in Development)
 Development is ongoing to integrate additional injection techniques and improve user experience, including
+- [x] LdrpLoadDll (planned for future release)
+- [x] Manual mapping (planned for future release)
+- [x] Settings tab
 - [ ] Better Gui
-- [ ] Settings tab
 - [ ] Kernel injection using IOCTL with a custom driver (driver under development, you can download the driver base)
-- [ ] LdrpLoadDll (planned for future release)
-- [ ] Manual mapping (planned for future release)
 - [ ] Thread hijacking (planned for future release)
-
 > [!NOTE]
 > Kernel injection, manual mapping, and thread hijacking features are not yet available in this version.
