@@ -1,4 +1,4 @@
-__int64 __fastcall LdrLoadDll(__int64 a1, int *a2, __int64 a3, _QWORD *a4)
+__int64 __fastcall LdrLoadDll(__int64 a1, int *a2, __int64 a3, _QWORD *a4) ; 4C 8D 05 18 4F 08 00
 {
   int v8; // eax
   int v9; // ecx
