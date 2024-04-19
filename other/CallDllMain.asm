@@ -6,32 +6,27 @@ extern GetProcAddress
 extern FreeLibrary
 
 _start:
-    ; Load the DLL
-    push dword 0 ; reserved parameter, must be zero
-    push dll_name ; pointer to the name of the DLL to load
+    push dword 0
+    push dll_name
     call LoadLibraryA
-    mov ebx, eax ; store the handle to the loaded DLL
+    mov ebx, eax
 
-    ; Get the address of DllMain
-    push dword 0 ; reserved parameter, must be zero
-    push dword "DllMain" ; name of the function to retrieve
-    push ebx ; handle to the loaded DLL
+    push dword 0
+    push dword "DllMain"
+    push ebx
     call GetProcAddress
-    mov ecx, eax ; store the address of DllMain
+    mov ecx, eax
 
-    ; Call DllMain
-    push dword 0 ; reserved parameter, must be zero
-    push dword DLL_PROCESS_ATTACH ; dwReason = DLL_PROCESS_ATTACH
-    call ecx ; call DllMain
+    push dword 0
+    push dword DLL_PROCESS_ATTACH
+    call ecx
 
-    ; Free the DLL
-    push ebx ; handle to the loaded DLL
+    push ebx
     call FreeLibrary
 
-    ; Exit
-    mov eax, 1 ; exit code
-    xor ebx, ebx ; no error
+    mov eax, 1
+    xor ebx, ebx
     int 0x80
 
 section .data
-dll_name db 'example.dll', 0 ; Change the DLL name as needed
+dll_name db 'example.dll', 0
