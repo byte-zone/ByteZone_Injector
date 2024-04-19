@@ -8,6 +8,14 @@ ByteZone Injector isn't just your ordinary injector—it's an immersive journey 
 </p>
 
 ***
+> [!TIP]
+> ⭐️ **If you like what we're doing with ByteZone Injector, why not show your support by starring the project on GitHub? Your feedback and encouragement help drive us forward on this exciting journey of exploration and discovery!**
+* [Arabic - العربية](https://github.com/byte-zone/ByteZone_Injector/wiki/Home-%7C-AR)
+
+
+
+
+
 #### Experience the Power of Variety 🎨
 Dive deep into the world of injection techniques with ByteZone Injector's array of options. From the experimental LdrpLoadDll method to the dynamic manual mapping base, every feature is crafted to provide a hands-on learning experience like no other. And let's not forget the revamped injector UI, designed to elevate your user experience to new heights.
 ***
@@ -45,5 +53,3 @@ Installation is a breeze:
 - [ ] Kernel injection using IOCTL with a custom driver (driver under development, download the base now!)
 - [ ] And much more to come!
 ***
-> [!TIP]
-> ⭐️ **If you like what we're doing with ByteZone Injector, why not show your support by starring the project on GitHub? Your feedback and encouragement help drive us forward on this exciting journey of exploration and discovery!**
