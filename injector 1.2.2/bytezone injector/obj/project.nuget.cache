@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "RriQnqZ+EXGcz9o3jTrVw+KXcML9QYlxbvOBrig6DoxZXArRjQvGQEl99DcpijR+49QNaAF5D4Pr1G+Gv0rrtQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\FastXSkyline\\Documents\\Skyline External\\Compressed\\ByteZone_Injector-main\\ByteZone_Injector V1.2\\ByteZone_Injector-main\\injector\\bytezone injector\\ByteZone_Injector.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\FastXSkyline\\.nuget\\packages\\guna.ui2.winforms\\2.0.4.6\\guna.ui2.winforms.2.0.4.6.nupkg.sha512",
+    "C:\\Users\\FastXSkyline\\.nuget\\packages\\system.codedom\\7.0.0\\system.codedom.7.0.0.nupkg.sha512",
+    "C:\\Users\\FastXSkyline\\.nuget\\packages\\system.management\\7.0.0\\system.management.7.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
