@@ -51,5 +51,5 @@ Installation is a breeze:
 - [x] LdrpLoadDll and manual mapping (UNSTABLE Version)
 - [x] A sleeker GUI for an even more immersive experience
 - [ ] Kernel injection using IOCTL with a custom driver (driver under development, download the base now!)
-- [ ] And much more to come!
+* And much more to come!
 ***
