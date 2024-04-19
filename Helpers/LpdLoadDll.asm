@@ -35,9 +35,6 @@ dll_path db 'C:\path\to\your\DLL.dll', 0
 process_id dd 1234
 flags dd 0
 
-section .bss
-; Define any uninitialized data if needed
-
 section .extern
 extern LpdLoadDll: dd
 extern OpenProcess: dword
