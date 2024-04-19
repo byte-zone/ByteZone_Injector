@@ -1,137 +1,49 @@
-## What is ByteZone Injector?
 
-ByteZone Injector is a user-mode injector written in C# .NET 8.0, designed for educational purposes in computer science. It allows you to delve into injection techniques and gain a deeper understanding of how applications interact with the system, Also the injector offers **various injection techniques** to experiment with, providing a hands-on learning experience for understanding application loading and execution mechanisms.
-- [أقرأ بالعربية](https://github.com/byte-zone/ByteZone_Injector/wiki/Home-%7C-AR#%D9%85%D9%82%D8%AF%D9%85%D8%A9)
+### **Introducing ByteZone Injector:** Elevate Your Injection Experience with Style and Substance 🚀!
+ByteZone Injector isn't just your ordinary injector—it's an immersive journey into the depths of computer science, all wrapped up in a sleek and stunning C# .NET 8.0 package. With its beautiful GUI and robust functionality, ByteZone Injector offers a playground for enthusiasts to explore injection techniques and unravel the mysteries of application interactions within the system.
+
+
+<p align="center">
+  <img src="https://github.com/byte-zone/ByteZone_Injector/blob/main/images/image_2024-04-19_050846246.png">
+</p>
+
+***
+#### Experience the Power of Variety 🎨
+Dive deep into the world of injection techniques with ByteZone Injector's array of options. From the experimental LdrpLoadDll method to the dynamic manual mapping base, every feature is crafted to provide a hands-on learning experience like no other. And let's not forget the revamped injector UI, designed to elevate your user experience to new heights.
+***
+#### **What's New in Version 1.2?** 🆕
+- **Experimental Excitement:**  Introducing the daring LdrpLoadDll method (UNSTABLE), pushing the boundaries of what's possible.
+- **Manual Mapping Mastery:** Harness the power of manual mapping for injection, unlocking endless possibilities.
+- **Sleek Interface:** Say hello to a revamped UI that's as intuitive as it is visually stunning.
+- **Enhanced Functionality:** Enjoy improved organization and clarity for a seamless injection process.
+***
+#### Technical Marvels Under the Hood 🔧
+Behind the scenes, ByteZone Injector boasts a rock-solid foundation. From enhanced IOCTL handling to seamless integration with the system, every aspect of the injector is meticulously crafted to deliver a magical experience.
+***
+#### **Project Structure at a Glance** 📁
+Delve into the heart of ByteZone Injector with two main files:
+- **classes.cs:** Your gateway to injection methods and GUI interaction, neatly encapsulated for clarity.
+- **Main.cs:** The nerve center of the application, where user interface logic meets functionality in perfect harmony.
+***
+#### **Code That Speaks Volumes** 💻
+Explore the codebase, where cleanliness meets clarity. Every line is meticulously commented, ensuring that learning is as effortless as it is enlightening.
+#### The Future Beckons with TwDrv 🔮
+Meet TwDrv, the driving force behind future kernel-level injection techniques. With its clean structure and essential functionalities, TwDrv sets the stage for even greater feats of injection mastery.
+***
+#### **Big Thanks to Our Contributors!** 🙏
+A big shoutout to [Fury](https://github.com/l0x53) for developing the driver, laying the groundwork for the next generation of injection techniques. And let's not forget [Fastx](https://github.com/FastXSkyline) for their invaluable contributions in improving the GUI, making ByteZone Injector not just powerful, but visually stunning too!
+***
+#### **Ready to Embark on Your Journey?** 🚀
+Installation is a breeze:
+- **ByteZone Injector and mapper:** 🚀 Download, build, and run—simple as that! 🛠️
+- **TwDrv:** 🛠️ The driver was meticulously developed using [Visual Studio 2019](https://my.visualstudio.com/Downloads?q=visual%20studio%202019&wt.mc_id=o~msft~vscom~older-downloads) and [WDK 1903](https://go.microsoft.com/fwlink/?linkid=2085767), ensuring optimal performance. Install them first to unlock its full potential. 🚀
+
+***
+#### **Roadmap to Greatness** 🛣️
+- [x] LdrpLoadDll and manual mapping (UNSTABLE Version)
+- [x] A sleeker GUI for an even more immersive experience
+- [ ] Kernel injection using IOCTL with a custom driver (driver under development, download the base now!)
+- [ ] And much more to come!
+***
 > [!TIP]
-> ### Driver update v1.0.1 / Injector update 1.2
-<details>
-	<summary>Changelog</summary>
-
-### Greetings!
-We're excited to announce the latest updates to our driver and injector.
-
-### Bytzone Injector 1.2
-1. Introducing the experimental LdrpLoadDll (ntdll.dll) method (UNSTABLE).
-2. Added manual mapping base for injection.
-3. Revamped injector UI for enhanced user experience.
-4. Improved organization of classes for better clarity.
-
-### Driver Technical Improvements:
-1. Enhanced IOCTL handling to efficiently extract and store process names during injection.
-2. Now tracks and displays injected process names within the driver.
-3. Updated driver logic for a seamless integration, ensuring a magical experience.
-
-### Bug Fixes:
-- Fixed injector loading issue on startup.
-- Boosted Injector performance.
-- Resolved minor glitches in the driver and optimized performance for a smoother injection process.
-</details>
-
-### Project Structure
-
-ByteZone Injector consists of two main files:
-
-#### `classes.cs`
-This file contains the core logic for injection methods and GUI interaction. It defines two main classes:
-- **DllImports:** This class encapsulates all Windows API imports and flags used throughout the injector, providing a central location for these definitions.
-- **InjectionMethods:** This class houses the actual injection techniques. Currently, it supports Native Injection, but future development plans include additional methods.
-
-#### `Main.cs`
-contains the main entry point and user interface logic for the ByteZone Injector application. It provides functionality to select a process and a DLL file for injection, as well as options for choosing the injection method. Key features include:
-1. Retrieval of running processes and display in a list.
-2. Selection of a DLL file through a file dialog.
-3. Native injection of the selected DLL into the chosen process.
-4. Handling of user interactions such as button clicks and dropdown selections.
-5. Display of process names and their corresponding IDs in a list.
-6. Management of the user interface components such as buttons, dropdowns, and labels.
-
-
-### Current Features
-
-**Native Injection:**
-This version of ByteZone Injector currently supports native injection using LoadLibraryA, providing a solid foundation for understanding injection mechanisms.
-
-
-### Clean and Well-Commented Code
-The codebase is well-structured and includes clear comments, making it easy to learn from and understand as you experiment with the current Native Injection feature.
-- Sample
-```csharp
-    /*
-     * PROCESS_QUERY_INFORMATION Required to retrieve certain information about a process.
-     * A handle that has the
-     * PROCESS_QUERY_INFORMATION access right is automatically granted
-     */
-    public const int PROCESS_QUERY_INFORMATION = 0x0400;
-    public const int PROCESS_VM_WRITE = 0x0020; // Required to write to memory in a process using WriteProcessMemory.
-    public const int PROCESS_VM_READ = 0x0010; // Required to read memory in a process using ReadProcessMemory.
-    public const int PROCESS_VM_OPERATION = 0x0008; // Required to perform an operation on the address space of a process 
-
-    /* Memory allocation */
-    public const uint MEM_COMMIT = 0x00001000; // MEM_COMMIT is a Windows constant used with Windows API calls
-    public const uint MEM_RESERVE = 0x00002000; // MEM_RESERVE is a Windows constant used with Windows API calls
-    public const uint PAGE_READWRITE = 4; // PAGE_READWRITE is a Windows constant used with Windows API calls
-
-    /* Generic Access Rights Win32 */
-    // https://learn.microsoft.com/en-us/windows/win32/secauthz/generic-access-rights
-    public const uint GENERIC_READ = 0x80000000; // Read access
-    public const uint GENERIC_WRITE = 0x40000000; // Write access
-    
-    /* 
-     * Opens a file or device, only if it exists.
-     * If the specified file or device does not exist, the
-     * function fails and the last-error code is set to ERROR_FILE_NOT_FOUND (2).
-     * https://learn.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-createfilea
-     */
-    public const int OPEN_EXISTING = 3; 
-```
-### TwDrv 
-The ByteZone Injector driver is a foundational component designed to support future kernel-level injection techniques. Developed using Visual Studio 2019 with C++ version 17 and utilizing the Windows Driver Framework (WDF) 1903 SDK, this driver lays the groundwork for upcoming features such as kernel injection using IOCTL. With its clean structure and essential functionalities, the driver provides a solid starting point for further development and experimentation with injection mechanisms.
-### Installation
-
-**ByteZone injector**
-1. Download and install the .NET 8.0 SDK from [here](https://dotnet.microsoft.com/en-us/download/dotnet/8.0).
-2. Download ByteZone injector from [here](https://github.com/byte-zone/ByteZone_Injector/archive/refs/heads/main.zip).
-3. Build and run the project.
-
-**TwDrv**
-1. Download and install visual studio 2019 from [here](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&rel=16)
-2. Download and install WDK 1903 from [here](https://go.microsoft.com/fwlink/?linkid=2085767)
-3. Download and install Windows SDK (1903) [here](https://go.microsoft.com/fwlink/?linkid=2083338)
-4. Open TwDrv Project, Build Settings set to x64 Release.
-- TwDrv Sample
-```cpp
-#define IOCTL_INJECT_CODE CTL_CODE(FILE_DEVICE_UNKNOWN, 0x800, METHOD_BUFFERED, FILE_SPECIAL_ACCESS)
-NTSTATUS IoControlHandler(PDEVICE_OBJECT DeviceObject, PIRP Irp)
-{
-	UNREFERENCED_PARAMETER(DeviceObject);
-	NTSTATUS status = STATUS_SUCCESS;
-	PIO_STACK_LOCATION stack = IoGetCurrentIrpStackLocation(Irp);
-	ULONG controlCode = stack->Parameters.DeviceIoControl.IoControlCode;
-
-	switch (controlCode)
-	{
-	case IOCTL_INJECT_CODE:
-			break;
-		default:
-			status = STATUS_INVALID_DEVICE_REQUEST;
-			break;
-	}
-
-	Irp->IoStatus.Status = status;
-	IoCompleteRequest(Irp, IO_NO_INCREMENT);
-	return status;
-}
-```
-
-**Dll Example**
-- Dll Example is just a simple example for printing and testing using ```MessageBoxA``` Function
-### Roadmap (Features in Development)
-Development is ongoing to integrate additional injection techniques and improve user experience, including
-- [x] LdrpLoadDll (UNSTABLE Version)
-- [x] Manual mapping (UNSTABLE Version)
-- [x] Settings tab
-- [ ] Better Gui
-- [ ] Kernel injection using IOCTL with a custom driver (driver under development, you can download the driver base)
-- [ ] Thread hijacking (planned for future release)
-> [!NOTE]
-> Kernel injection, manual mapping, and thread hijacking features are not yet available in this version.
+> ⭐️ **If you like what we're doing with ByteZone Injector, why not show your support by starring the project on GitHub? Your feedback and encouragement help drive us forward on this exciting journey of exploration and discovery!**
