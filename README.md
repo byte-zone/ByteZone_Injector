@@ -9,7 +9,7 @@ ByteZone Injector isn't just your ordinary injector—it's an immersive journey 
 
 ***
 > [!TIP]
-> ⭐️ **If you like what we're doing with ByteZone Injector, why not show your support by starring the project on GitHub? Your feedback and encouragement help drive us forward on this exciting journey of exploration and discovery!**
+> ⭐️ **If you like what we're doing with ByteZone Injector, why not show your support by starring the project? Your feedback and encouragement help drive us forward on this exciting journey of exploration and discovery!**
 * [Arabic - العربية](https://github.com/byte-zone/ByteZone_Injector/wiki/Home-%7C-AR)
 
 
