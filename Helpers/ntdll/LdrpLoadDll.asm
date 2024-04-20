@@ -1,4 +1,4 @@
-__int64 __fastcall LdrpLoadDll(__int64 a1, int a2, unsigned int a3, __int64 *a4)
+__int64 __fastcall LdrpLoadDll(__int64 a1, int a2, unsigned int a3, __int64 *a4) ; 40 55 53 56 57 41 56 41 57 48 8D 6C 24 88
 {
   unsigned int v8; // [rsp+40h] [rbp-C0h] BYREF
   unsigned int v9; // [rsp+48h] [rbp-B8h] BYREF
