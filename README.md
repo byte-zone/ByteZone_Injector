@@ -2,6 +2,8 @@
 ### **Introducing ByteZone Injector:** Elevate Your Injection Experience with Style and Substance 🚀!
 ByteZone Injector isn't just your ordinary injector—it's an immersive journey into the depths of computer science, all wrapped up in a sleek and stunning C# .NET 8.0 package. With its beautiful GUI and robust functionality, ByteZone Injector offers a playground for enthusiasts to explore injection techniques and unravel the mysteries of application interactions within the system.
 
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+
 
 <p align="center">
   <img src="https://github.com/byte-zone/ByteZone_Injector/blob/main/images/image_2024-04-19_050846246.png">
